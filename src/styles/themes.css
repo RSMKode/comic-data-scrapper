@@ -1,0 +1,113 @@
+/* @layer base { */
+:root {
+  --accent-primary-hex: #c21b53;
+  --accent-primary: hsl(340 76% 43%);
+  --accent-primary-foreground: hsl(210 40% 98%);
+
+  --accent-secondary-hex: #1ac1ae;
+  --accent-secondary: hsl(173, 76%, 43%);
+  --accent-secondary-foreground: hsl(210 40% 98%);
+
+  &.color-theme-base {
+    /* --accent-primary: hsl(180, 34%, 59%); */
+    --accent-primary: hsl(210 30 65%);
+    --accent-primary-foreground: var(--foreground);
+  }
+  &.color-theme-blue {
+    --accent-primary-hex: #449ff4;
+    --accent-primary: hsl(209 89% 61%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+
+    --accent-secondary-hex: #e09706;
+    --accent-secondary: hsl(40, 95%, 45%);
+    --accent-secondary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-dark-blue {
+    --accent-primary-hex: #2e298e;
+    --accent-primary: hsl(230 50% 40%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-orange {
+    --accent-primary-hex: #e08506;
+    --accent-primary: hsl(32 95% 45%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+
+    --accent-secondary-hex: #449ff4;
+    --accent-secondary: hsl(209 89% 61%);
+    --accent-secondary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-magenta {
+    --accent-primary-hex: #c21b53;
+    --accent-primary: hsl(340 76% 43%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+
+    --accent-secondary-hex: #1ac1ae;
+    --accent-secondary: hsl(173 76% 43%);
+    --accent-secondary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-turquoise {
+    --accent-primary-hex: #1ac1ae;
+    --accent-primary: hsl(173 76% 43%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-green {
+    --accent-primary-hex: #1cba86;
+    --accent-primary: hsl(160 74% 42%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-purple {
+    --accent-primary-hex: #7e1b6e;
+    --accent-primary: hsl(310 40% 40%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-red {
+    --accent-primary-hex: #ad1f1f;
+    --accent-primary: hsl(0 70% 40%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-yellow {
+    --accent-primary-hex: #e0a906;
+    --accent-primary: hsl(45 95% 45%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-brown-merce-v {
+    --accent-primary-hex: #8a4842;
+    --accent-primary: hsl(5 35% 40%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+}
+
+.dark {
+  --accent-primary-hex: #c21b53;
+  --accent-primary: hsl(340 76% 43%);
+  --accent-primary-foreground: hsl(210 40% 98%);
+
+  --accent-secondary-hex: #1ac1ae;
+  --accent-secondary: hsl(173, 76%, 50%);
+  --accent-secondary-foreground: hsl(210 40% 98%);
+
+  &.color-theme-base {
+    /* --accent-primary: hsl(184, 33%, 45%); */
+    --accent-primary: hsl(210 32.6% 45%);
+    /* --accent-primary-foreground: hsl(var(--foreground)); */
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+
+  &.color-theme-purple {
+    --accent-primary-hex: #a14591;
+    --accent-primary: hsl(310 40% 45%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-dark-blue {
+    --accent-primary-hex: #334ccc;
+    --accent-primary: hsl(230 55% 53%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+  &.color-theme-red {
+    --accent-primary-hex: #ba2121;
+    --accent-primary: hsl(0 70% 43%);
+    --accent-primary-foreground: hsl(210 40% 98%);
+  }
+}
+/* } */
+

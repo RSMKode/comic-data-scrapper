@@ -1,0 +1,25 @@
+name: ${APP_NAME}-${APP_ENV}
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${APP_PORT}:3000" # Next.js App
+    volumes:
+      - ./prisma:/app/prisma
+    environment:
+      - API_URL=${API_URL}
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - ${NGINX_PORT_HTTP}:80 # HTTP
+      - ${NGINX_PORT_HTTPS}:443 # HTTPS
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - nextjs

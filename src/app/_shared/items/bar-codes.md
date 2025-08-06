@@ -1,0 +1,18 @@
+# DEV
+
+- Articulo: 00008
+  - EAN 14: 08435205639441
+    - CB: 0108435205639441
+- Articulo: 03974
+  - Tipo: Lote
+  - EAN 14: 00815948023959
+    - CB: 01008159480239591512121210prueba
+- Articulo: 03973
+  - Tipo: Nº Serie
+  - EAN 14: 99999999999999
+    - CB: 01999999999999991512121221pruebaSerie$241asdadsasd10pruebaLote
+    - CB: 01999999999999991515101221pruebaSerie2$241asdadsasd10pruebaLote
+    - CB: 01999999999999991512121221RecepSerie3$241asdadsasd10pruebaLote
+
+# PROD
+    - CB: 01008774660073681512121221pruebaSerie$241asdadsasd10pruebaLote
