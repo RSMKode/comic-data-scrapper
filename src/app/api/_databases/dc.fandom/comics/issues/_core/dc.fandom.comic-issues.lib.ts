@@ -1,13 +1,13 @@
-import { MarvelComicsFandomScrapedComicIssueDataT } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.definitions';
+import { MarvelFandomScrapedComicIssueDataT } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.definitions';
 import { COMIC_DATABASES } from '@/app/api/comics/issues/_core/comic-databases.config';
 import { CheerioAPI } from 'cheerio';
-import { DCComicsFandomScrapedComicIssueData } from './dc.fandom.comic-issues.definitions';
+import { DCFandomScrapedComicIssueDataT } from './dc.fandom.comic-issues.definitions';
 
-export function scrapeDCComicsFandomComicIssue(
+export function scrapeDCFandomComicIssue(
   comicUrl: string,
   $: CheerioAPI
-): DCComicsFandomScrapedComicIssueData {
-  const database = COMIC_DATABASES.dcComicsFandom;
+): DCFandomScrapedComicIssueDataT {
+  const database = COMIC_DATABASES.dcFandom;
   const publisher = database.defaultPublisher;
 
   const title = $("h2[data-source='OneShot']").text().trim();
@@ -130,7 +130,7 @@ export function scrapeDCComicsFandomComicIssue(
   const editorsInChief =
     editorInChiefArray.length > 0 ? editorInChiefArray : [];
 
-  const scrapedData: DCComicsFandomScrapedComicIssueData = {
+  const scrapedData: DCFandomScrapedComicIssueDataT = {
     comicUrl,
     database,
     publisher,

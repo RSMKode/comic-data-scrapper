@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
 import { COMIC_DATABASES } from './comic-databases.config';
 import { ComicIssueT } from './comic-issues.definitions';
+import { IS_DEV } from '@/config/env.config';
 
 export async function scrapeComicIssueUseCase(
   comicUrl: string,
@@ -46,6 +47,8 @@ export async function scrapeComicIssueUseCase(
 
     return comicIssue;
   } catch (error) {
+    console.error(error);
+
     throw new Error(
       `Error scraping comic: ${
         error instanceof Error ? error.message : 'Unknown error'

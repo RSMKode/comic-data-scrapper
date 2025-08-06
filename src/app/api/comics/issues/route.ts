@@ -1,6 +1,6 @@
 import z from 'zod';
 import { API_CONFIG } from '../../api.config';
-import { scrapeComic, transformScrapedDataToComicIssue } from './_core/comic-issues.use-cases';
+import { scrapeComicIssueUseCase } from './_core/comic-issues.use-cases';
 
 export const GetComicDataFromIssueSchema = z.object({
   issueUrl: z.string().min(1, 'Issue URL is required'),
@@ -23,8 +23,8 @@ export const GET = async (request: Request) => {
   }
   const { issueUrl } = parsedSearchParams;
 
-  const scrappedData = await scrapeComic(issueUrl, new Date());
-  if (!scrappedData) {
+  const comicIssue = await scrapeComicIssueUseCase(issueUrl, {readDate: new Date()});
+  if (!comicIssue) {
     return new Response(
       JSON.stringify({ error: 'Failed to scrape comic data' }),
       {
@@ -33,9 +33,8 @@ export const GET = async (request: Request) => {
       }
     );
   }
-  const parsedScrapedData = transformScrapedDataToComicIssue(scrappedData);
 
-  return new Response(JSON.stringify(parsedScrapedData), {
+  return new Response(JSON.stringify(comicIssue), {
     status: 200,
     headers: API_CONFIG.baseHeaders,
   });

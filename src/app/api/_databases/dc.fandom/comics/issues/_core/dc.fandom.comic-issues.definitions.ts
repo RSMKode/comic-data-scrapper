@@ -1,6 +1,6 @@
 import { ComicDatabaseT } from "@/app/api/comics/issues/_core/comic-databases.definitions";
 
-export type DCComicsFandomScrapedComicIssueData = {
+export type DCFandomScrapedComicIssueDataT = {
   comicUrl: string;
   database: ComicDatabaseT
   publisher: string;

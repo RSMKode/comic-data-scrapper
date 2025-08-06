@@ -3,7 +3,7 @@ import { ComicIssueReferenceSchema } from "@/app/api/comics/issues/_core/comic-i
 import { z } from "zod";
 
 
-export const MarvelComicsFandomScrapedComicIssueDataSchema = z.object({
+export const MarvelFandomScrapedComicIssueDataSchema = z.object({
   database: ComicDatabaseSchema,
   publisher: z.string(),
   comicUrl: z.string(),
@@ -24,4 +24,4 @@ export const MarvelComicsFandomScrapedComicIssueDataSchema = z.object({
   editorsInChief: z.array(z.string()).optional(),
 });
 
-export type MarvelComicsFandomScrapedComicIssueDataT = z.infer<typeof MarvelComicsFandomScrapedComicIssueDataSchema>;
+export type MarvelFandomScrapedComicIssueDataT = z.infer<typeof MarvelFandomScrapedComicIssueDataSchema>;

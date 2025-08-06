@@ -1,14 +1,14 @@
 import { COMIC_DATABASES } from '@/app/api/comics/issues/_core/comic-databases.config';
-import { MarvelComicsFandomScrapedComicIssueDataT } from './marvel.fandom.comic-issues.definitions';
+import { MarvelFandomScrapedComicIssueDataT } from './marvel.fandom.comic-issues.definitions';
 import { CheerioAPI } from 'cheerio';
-import { marvelComicsFandomScrapedDataToComicIssueAdapter } from './marvel.fandom.comic-issues.adapters';
+import { marvelFandomScrapedDataToComicIssueAdapter } from './marvel.fandom.comic-issues.adapters';
 import { ComicIssueT } from '@/app/api/comics/issues/_core/comic-issues.definitions';
 
-export function scrapeMarvelComicsFandomComicIssue(
+export function scrapeMarvelFandomComicIssue(
   comicUrl: string,
   $: CheerioAPI
-): MarvelComicsFandomScrapedComicIssueDataT {
-  const database = COMIC_DATABASES.marvelComicsFandom;
+): MarvelFandomScrapedComicIssueDataT {
+  const database = COMIC_DATABASES.marvelFandom;
   const publisher = database.defaultPublisher;
 
   const title = $('h2.pi-title').text().trim();
@@ -131,7 +131,7 @@ export function scrapeMarvelComicsFandomComicIssue(
   const editorsInChief =
     editorInChiefArray.length > 0 ? editorInChiefArray : [];
 
-  const scrapedData: MarvelComicsFandomScrapedComicIssueDataT = {
+  const scrapedData: MarvelFandomScrapedComicIssueDataT = {
     comicUrl,
     database,
     publisher,
@@ -154,6 +154,6 @@ export function scrapeMarvelComicsFandomComicIssue(
   return scrapedData
 
   // const parsedIssueData =
-  //   marvelComicsFandomScrapedDataToComicIssueAdapter(scrapedData);
+  //   marvelFandomScrapedDataToComicIssueAdapter(scrapedData);
   // return parsedIssueData;
 }

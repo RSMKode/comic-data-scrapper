@@ -1,14 +1,14 @@
 import { COMIC_DATABASES } from '@/app/api/comics/issues/_core/comic-databases.config';
 import { ComicIssueT } from '@/app/api/comics/issues/_core/comic-issues.definitions';
 import { generateAuthorId } from '@/app/api/comics/issues/_core/comic-issues.lib';
-import { MarvelFandomScrapedComicIssueDataT } from './marvel.fandom.comic-issues.definitions';
+import { DCFandomScrapedComicIssueDataT } from './dc.fandom.comic-issues.definitions';
 
 // Función auxiliar para convertir el resultado del scraping al formato de tu schema
-export function marvelFandomScrapedDataToComicIssueAdapter(
-  scrapedData: MarvelFandomScrapedComicIssueDataT,
+export function dcFandomScrapedDataToComicIssueAdapter(
+  scrapedData: DCFandomScrapedComicIssueDataT,
   options?: {}
 ): ComicIssueT {
-  const database = COMIC_DATABASES.marvelFandom;
+  const database = COMIC_DATABASES.dcFandom;
   const publisher = scrapedData.publisher;
 
   const transformed: Partial<ComicIssueT> = {

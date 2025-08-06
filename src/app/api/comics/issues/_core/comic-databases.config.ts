@@ -1,7 +1,9 @@
-import { marvelComicsFandomScrapedDataToComicIssueAdapter } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.adapters';
-import { scrapeMarvelComicsFandomComicIssue } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.lib';
+import { marvelFandomScrapedDataToComicIssueAdapter } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.adapters';
+import { scrapeMarvelFandomComicIssue } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.lib';
 import { ComicDatabaseT } from './comic-databases.definitions';
-import { MarvelComicsFandomScrapedComicIssueDataT } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.definitions';
+import { MarvelFandomScrapedComicIssueDataT } from '@/app/api/_databases/marvel.fandom/comics/issues/_core/marvel.fandom.comic-issues.definitions';
+import { scrapeDCFandomComicIssue } from '@/app/api/_databases/dc.fandom/comics/issues/_core/dc.fandom.comic-issues.lib';
+import { dcFandomScrapedDataToComicIssueAdapter } from '@/app/api/_databases/dc.fandom/comics/issues/_core/marvel.fandom.comic-issues.adapters';
 
 export const COMIC_DATABASES = {
   leagueOfComicGeeks: {
@@ -10,21 +12,23 @@ export const COMIC_DATABASES = {
     type: 'App',
     // scrapper:
   },
-  marvelComicsFandom: {
+  marvelFandom: {
     name: 'Marvel Comics Database',
     domain: 'marvel.fandom.com',
     type: 'Wiki',
     defaultPublisher: 'Marvel Comics',
-    scrapper: scrapeMarvelComicsFandomComicIssue,
-    adapter: marvelComicsFandomScrapedDataToComicIssueAdapter,
+    scrapper: scrapeMarvelFandomComicIssue,
+    adapter: marvelFandomScrapedDataToComicIssueAdapter,
   },
-  dcComicsFandom: {
+  dcFandom: {
     name: 'DC Comics Database',
     domain: 'dc.fandom.com',
     type: 'Wiki',
     defaultPublisher: 'DC Comics',
+    scrapper: scrapeDCFandomComicIssue,
+    adapter: dcFandomScrapedDataToComicIssueAdapter
   },
-  imageComicsFandom: {
+  imageFandom: {
     name: 'Image Comics Database',
     domain: 'imagecomics.fandom.com',
     type: 'Wiki',
